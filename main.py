@@ -14,7 +14,7 @@ import pylab as pl
 from sklearn.linear_model.logistic import LogisticRegression
 from sklearn.cross_validation import train_test_split
 #用pandas加载数据.csv文件，然后用train_test_split分成训练集（75%）和测试集（25%）：
-X_train_raw, X_test_raw, y_train, y_test = train_test_split(X,Y,random_state=1)
+X_train_raw, X_test_raw, y_train, y_test = train_test_split(X,Y)
 
 
 # print(data_frame.describe())
@@ -35,10 +35,19 @@ classifier.fit(X_train,y_train)
 
 print(classifier.coef_)
 
+# predictions=classifier.predict(X_test)
 predictions=classifier.predict(X_test)
-# predictions = prediction
+probabilities=classifier.predict_proba(X_test)
+# probabilities = prediction
 
-print(predictions)
+score = classifier.score(X_test, y_test)
+
+params = classifier.get_params();
+print(params)
+
+print("score", score)
+
+print("probabilities",probabilities)
 print(y_test.shape)
 
 # import matplotlib.pyplot as plt
