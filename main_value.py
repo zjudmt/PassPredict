@@ -9,7 +9,7 @@ from sklearn.cross_validation import train_test_split
 data_frame=pd.read_csv('dataNew3.csv')
 
 X = data_frame[['speed_p','speed_r','speed_d','distance_d_p','distance_d_r','distance_d1_p','distance_d2_r' ,'angle_d','angle_d1_p','angle_d2_r' , 'possTimePre','possessionTime']]
-Y = data_frame[['flag']]
+Y = data_frame[['reward']]
 
 #用pandas加载数据.csv文件，然后用train_test_split分成训练集（75%）和测试集（25%）：
 X_train, X_test, y_train, y_test = train_test_split(X,Y.values.T[0],random_state=1)
