@@ -6,7 +6,7 @@ import pylab as pl
 from sklearn.linear_model.logistic import LogisticRegression
 from sklearn.cross_validation import train_test_split
 
-data_frame=pd.read_csv('dataNew3.csv')
+data_frame=pd.read_csv('data.csv')
 
 X = data_frame[['speed_p','speed_r','speed_d','distance_d_p','distance_d_r','distance_d1_p','distance_d2_r' ,'angle_d','angle_d1_p','angle_d2_r' , 'possTimePre','possessionTime']]
 Y = data_frame[['flag']]
